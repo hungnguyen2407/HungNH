@@ -157,7 +157,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form>
+                <form id="lab1-form">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="id" class="col-form-label">ID:</label>
@@ -485,5 +485,13 @@
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHeD_9f0DYpIok1glRr6fTcvm_FHuBQWg&libraries=places&callback=initAutocomplete"
         async defer></script>
+<script>
+    $('#lab1-form').on('keydown', 'input', function (event) {
+        if (event.which === 13) {
+            $(this).next('input').focus();
+            event.preventDefault();
+        }
+    });
+</script>
 </body>
 </html>
