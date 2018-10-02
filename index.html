@@ -161,24 +161,24 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="id" class="col-form-label">ID:</label>
-                            <input type="text" class="form-control" id="id" tabindex="0">
+                            <input type="text" class="form-control inputs" id="id" autofocus>
                         </div>
                         <div class="form-group">
                             <label for="name" class="col-form-label">Name:</label>
-                            <input type="text" class="form-control" id="name" tabindex="0">
+                            <input type="text" class="form-control inputs" id="name">
                         </div>
                         <div class="form-group">
                             <label for="phone" class="col-form-label">Phone Number:</label>
-                            <input type="tel" minlength="10" maxlength="12" class="form-control" id="phone"
+                            <input type="tel" minlength="10" maxlength="12" class="form-control inputs" id="phone"
                                    tabindex="0">
                         </div>
                         <div class="form-group">
                             <label for="email" class="col-form-label">Email:</label>
-                            <input type="email" class="form-control" id="email" tabindex="0">
+                            <input type="email" class="form-control inputs" id="email">
                         </div>
                         <div class="form-group">
                             <label for="gender" class="col-form-label">Gender:</label>
-                            <select id="gender" class="custom-select" tabindex="0">
+                            <select id="gender" class="custom-select inputs">
                                 <option value="" selected></option>
                                 <option value="male">male</option>
                                 <option value="female">female</option>
@@ -190,37 +190,37 @@
                             <div class="col-sm-2">Position:</div>
                             <div class="col-sm-10">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck1" tabindex="0">
+                                    <input class="form-check-input inputs" type="checkbox" id="gridCheck1">
                                     <label class="form-check-label" for="gridCheck1">
                                         Administrator
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
+                                    <input class="form-check-input inputs" type="checkbox" id="gridCheck2">
                                     <label class="form-check-label" for="gridCheck2">
                                         Project Manager
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck3">
+                                    <input class="form-check-input inputs" type="checkbox" id="gridCheck3">
                                     <label class="form-check-label" for="gridCheck3">
                                         Technical Assistant
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck4">
+                                    <input class="form-check-input inputs" type="checkbox" id="gridCheck4">
                                     <label class="form-check-label" for="gridCheck4">
                                         Quality Assurance
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck5">
+                                    <input class="form-check-input inputs" type="checkbox" id="gridCheck5">
                                     <label class="form-check-label" for="gridCheck5">
                                         Developer
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck6">
+                                    <input class="form-check-input inputs" type="checkbox" id="gridCheck6">
                                     <label class="form-check-label" for="gridCheck5">
                                         Marketing
                                     </label>
@@ -229,29 +229,29 @@
                         </div>
                         <div class="form-group">
                             <label for="address" class="col-form-label">Address:</label>
-                            <input id="address" class="form-control" type="text" placeholder="" tabindex="0">
+                            <input id="address" class="form-control inputs" type="text" placeholder="">
                             <div id="map"></div>
                         </div>
                         <div class="form-group">
                             <label for="birthPlace" class="col-form-label">Birth Place:</label>
-                            <input id="birthPlace" class="form-control" type="text" placeholder="" tabindex="0">
+                            <input id="birthPlace" class="form-control inputs" type="text" placeholder="">
                             <div id="map2"></div>
                         </div>
                         <div class="form-group">
                             <label for="birthDate" class="col-form-label">Birth Date:</label>
-                            <input type="date" class="form-control" id="birthDate" tabindex="8">
+                            <input type="date" class="form-control inputs" id="birthDate">
                         </div>
                         <div class="form-group">
                             <label for="age" class="col-form-label">Age:</label>
-                            <input type="number" min="18" max="99" class="form-control" id="age" tabindex="0">
+                            <input type="number" min="18" max="99" class="form-control inputs" id="age">
                         </div>
                         <div class="form-group">
                             <label for="startDate" class="col-form-label">Start Date:</label>
-                            <input type="date" class="form-control" id="startDate" tabindex="0">
+                            <input type="date" class="form-control inputs" id="startDate">
                         </div>
                         <div class="form-group">
                             <label for="salary" class="col-form-label">Salary:</label>
-                            <input type="text" class="form-control" id="salary" tabindex="0">
+                            <input type="text" class="form-control inputs" id="salary">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -486,10 +486,18 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHeD_9f0DYpIok1glRr6fTcvm_FHuBQWg&libraries=places&callback=initAutocomplete"
         async defer></script>
 <script>
-    $('#lab1-form').on('keydown', 'input', function (event) {
-        if (event.which === 13) {
-            $(this).next('input').focus();
+    // $('#lab1-form').on('keydown', 'input', function (event) {
+    //     if (event.which === 13) {
+    //         event.preventDefault();
+    //         $('#lab1-form').next('input').focus();
+    //         console.log('it worked');
+    //     }
+    // });
+    $('.inputs').keydown(function (e) {
+        if (e.which === 13) {
             event.preventDefault();
+            var index = $('.inputs').index(this) + 1;
+            $('.inputs').eq(index).focus();
         }
     });
 </script>
