@@ -60,7 +60,8 @@
         <button class="btn btn-primary" data-toggle="modal" data-target="#createEmployeeModel">
             <i class="fas fa-user-plus"></i>
         </button>
-
+        <br>
+        <br>
         <table id="lab1-table" class="table table-striped table-bordered dt-responsive nowrap"
                style="width: 100%">
             <thead>
@@ -95,8 +96,10 @@
                 <td>20/12/2016</td>
                 <td>$1200,00</td>
                 <td>
-                    <a href="" class="btn"><i class="fas fa-user-edit text-secondary"></i></a>
-                    <a href="" class="btn"><i class="fas fa-user-minus text-danger"></i></a>
+                    <a class="btn" data-toggle="modal" data-target="#editUser" data-id="0"><i
+                            class="fas fa-user-edit text-secondary"></i></a>
+                    <a class="btn" data-toggle="modal" data-target="#deleteUser"><i
+                            class="fas fa-user-minus text-danger"></i></a>
                 </td>
             </tr>
             <tr>
@@ -113,8 +116,10 @@
                 <td>12/04/2017</td>
                 <td>$400,00</td>
                 <td>
-                    <a href="" class="btn"><i class="fas fa-user-edit text-secondary"></i></a>
-                    <a href="" class="btn"><i class="fas fa-user-minus text-danger"></i></a>
+                    <a class="btn" data-toggle="modal" data-target="#editUser" data-id="1"><i
+                            class="fas fa-user-edit text-secondary"></i></a>
+                    <a class="btn" data-toggle="modal" data-target="#deleteUser"><i
+                            class="fas fa-user-minus text-danger"></i></a>
                 </td>
             </tr>
             <tr>
@@ -131,8 +136,10 @@
                 <td>22/08/2010</td>
                 <td>$2000,00</td>
                 <td>
-                    <a href="" class="btn"><i class="fas fa-user-edit text-secondary"></i></a>
-                    <a href="" class="btn"><i class="fas fa-user-minus text-danger"></i></a>
+                    <a class="btn" data-toggle="modal" data-target="#editUser" data-id="2"><i
+                            class="fas fa-user-edit text-secondary"></i></a>
+                    <a class="btn" data-toggle="modal" data-target="#deleteUser"><i
+                            class="fas fa-user-minus text-danger"></i></a>
                 </td>
             </tr>
             </tbody>
@@ -153,10 +160,6 @@
             </div>
             <form id="lab1-form">
                 <div class="modal-body">
-                    <div class="form-group">
-                        <label for="id" class="col-form-label">ID:</label>
-                        <input type="text" class="form-control inputs" id="id" autofocus>
-                    </div>
                     <div class="form-group">
                         <label for="name" class="col-form-label">Name:</label>
                         <input type="text" class="form-control inputs" id="name">
@@ -257,6 +260,135 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="editUser1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit employee information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control inputs" id="name-edit">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="col-form-label">Phone Number:</label>
+                        <input type="tel" minlength="10" maxlength="12" class="form-control inputs" id="phone-edit"
+                               tabindex="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-form-label">Email:</label>
+                        <input type="email" class="form-control inputs" id="email-edit">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="col-form-label">Gender:</label>
+                        <select id="gender-edit" class="custom-select inputs">
+                            <option value="" selected></option>
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                            <option value="gay">gay</option>
+                            <option value="lesbian">lesbian</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-2">Position:</div>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input inputs" type="checkbox" id="adm-edit">
+                                <label class="form-check-label" for="adm-edit">
+                                    Administrator
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input inputs" type="checkbox" id="pm-edit">
+                                <label class="form-check-label" for="pm-edit">
+                                    Project Manager
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input inputs" type="checkbox" id="ta-edit">
+                                <label class="form-check-label" for="ta-edit">
+                                    Technical Assistant
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input inputs" type="checkbox" id="qa-edit">
+                                <label class="form-check-label" for="qa-edit">
+                                    Quality Assurance
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input inputs" type="checkbox" id="dv-edit">
+                                <label class="form-check-label" for="dv-edit">
+                                    Developer
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input inputs" type="checkbox" id="mk-edit">
+                                <label class="form-check-label" for="mk-edit">
+                                    Marketing
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="col-form-label">Address:</label>
+                        <input id="address-edit" class="form-control inputs" type="text" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthPlace" class="col-form-label">Birth Place:</label>
+                        <input id="birthPlace-edit" class="form-control inputs" type="text" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthDate" class="col-form-label">Birth Date:</label>
+                        <input type="date" class="form-control inputs" id="birthDate-edit">
+                    </div>
+                    <div class="form-group">
+                        <label for="age" class="col-form-label">Age:</label>
+                        <input type="number" min="18" max="99" class="form-control inputs" id="age-edit">
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate" class="col-form-label">Start Date:</label>
+                        <input type="date" class="form-control inputs" id="startDate-edit">
+                    </div>
+                    <div class="form-group">
+                        <label for="salary" class="col-form-label">Salary:</label>
+                        <input type="text" class="form-control inputs" id="salary-edit">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="reset" class="btn btn-danger">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal face" tabindex="-1" role="dialog" id="deleteUser">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-exclamation-triangle text-warning"></i> Warning</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure want to delete this user ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger">OK</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Footer -->
 <footer class="page-footer font-small blue pt-4 bg-light">
@@ -480,13 +612,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHeD_9f0DYpIok1glRr6fTcvm_FHuBQWg&libraries=places&callback=initAutocomplete"
         async defer></script>
 <script>
-    // $('#lab1-form').on('keydown', 'input', function (event) {
-    //     if (event.which === 13) {
-    //         event.preventDefault();
-    //         $('#lab1-form').next('input').focus();
-    //         console.log('it worked');
-    //     }
-    // });
     $('.inputs').keydown(function (e) {
         if (e.which === 13) {
             event.preventDefault();
@@ -494,6 +619,70 @@
             $('.inputs').eq(index).focus();
         }
     });
+</script>
+
+<script>
+    $('#editUser').on('show.bs.modal', function (event) {
+        var table = $('#lab1-table').DataTable();
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var id = button.data('id'); // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this);
+        var name = table.cell(id, 1).data();
+        var phone = table.cell(id, 2).data();
+        var mail = table.cell(id, 3).data();
+        var gender = table.cell(id, 4).data();
+        var position = table.cell(id, 5).data();
+        var address = table.cell(id, 6).data();
+        var birthPlace = table.cell(id, 7).data();
+        var birthDate = table.cell(id, 8).data();
+        var age = table.cell(id, 9).data();
+        var startDate = table.cell(id, 10).data();
+        var salary = table.cell(id, 11).data();
+        modal.find('#name-edit').val(name);
+        modal.find('#phone-edit').val(phone);
+        modal.find('#email-edit').val(mail);
+        modal.find('#gender-edit').val(gender);
+        modal.find('#name-edit').val(name);
+
+        modal.find('#adm-edit').prop("checked", false);
+        modal.find('#dv-edit').prop("checked", false);
+        modal.find('#pm-edit').prop("checked", false);
+        modal.find('#ta-edit').prop("checked", false);
+        modal.find('#qa-edit').prop("checked", false);
+        modal.find('#mk-edit').prop("checked", false);
+
+        position.split(" ").forEach(function (pos) {
+            switch (pos) {
+                case "Administrator":
+                    modal.find('#adm-edit').prop("checked", true);
+                    break;
+                case "Developer":
+                    modal.find('#dv-edit').prop("checked", true);
+                    break;
+                case "Project Manager":
+                    modal.find('#pm-edit').prop("checked", true);
+                    break;
+                case "Technical Assistant":
+                    modal.find('#ta-edit').prop("checked", true);
+                    break;
+                case "Quality Assurance":
+                    modal.find('#qa-edit').prop("checked", true);
+                    break;
+                case "Marketing":
+                    modal.find('#mk-edit').prop("checked", true);
+                    break;
+            }
+        });
+        modal.find('#address-edit').val(address);
+        modal.find('#birthPlace-edit').val(birthPlace);
+        modal.find('#birthDate-edit').val(birthDate);
+        modal.find('#age-edit').val(age);
+        modal.find('#startDate-edit').val(startDate);
+        modal.find('#salary-edit').val(salary);
+    })
+
 </script>
 </body>
 </html>
