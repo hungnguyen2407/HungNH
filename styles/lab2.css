@@ -1,0 +1,29 @@
+.img-small {
+    height: 80px;
+}
+
+.card-bg {
+    background-color: #F7F7F7;
+}
+
+.star {
+    position: relative;
+    background-image: url('../images/labs/lab2/implementation/common.png');
+    background-position: -97px -83px;
+    width: 112px;
+    height: 20px;
+}
+
+.star i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    background-image: url('../images/labs/lab2/implementation/common.png');
+    background-position: 0 -109px;
+    width: 112px;
+    height: 20px;
+    -webkit-transition: all .2s 0s ease;
+    -moz-transition: all .2s 0s ease;
+    transition: all .2s 0s ease;
+}
