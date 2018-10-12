@@ -45,32 +45,57 @@
             <li class="breadcrumb-item active" aria-current="page">Lab 2</li>
         </ol>
     </nav>
-    <div class="card shadow-sm">
-        <div class="card-header">
-            <h5>User Scenarios</h5>
-            URL: <a href="/images/labs/lab2/scenarios/lab2-user-scenarios.png"
-                    class="card-link">lab2-user-scenarios.png</a>
-        </div>
-        <div class="card-body">
-            <img class="card-img" src="/images/labs/lab2/scenarios/lab2-user-scenarios.png" alt="">
-        </div>
-    </div>
-    <div class="card shadow-sm">
-        <div class="card-header">
-            <h5>Design</h5>
-            URL: <a href="/images/labs/lab2/design/lab2-product-detail.png">lab2-product-detail.png</a>
-        </div>
-        <div class="card-body">
-            <img src="/images/labs/lab2/design/lab2-product-detail.png" alt="" class="card-img">
-        </div>
-    </div>
-    <div class="card shadow-sm">
-        <div class="card-header">
-            <h5>Implementation</h5>
-            URL: <a href="/labs/lab2/implementation.html">lab-2.html</a>
-        </div>
-        <div class="card-body">
-            <div include-html="/labs/lab2/implementation.html"></div>
+
+    <div class="container">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#user-scenarios">User Scenarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#design">Design</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#implementation">Implementation</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content mt-4">
+            <div class="tab-pane container active" id="user-scenarios">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h5>User Scenarios</h5>
+                        URL: <a href="/images/labs/lab2/scenarios/lab2-user-scenarios.png"
+                                class="card-link">lab2-user-scenarios.png</a>
+                    </div>
+                    <div class="card-body">
+                        <img class="card-img" src="/images/labs/lab2/scenarios/lab2-user-scenarios.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane container fade" id="design">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h5>Design</h5>
+                        URL: <a href="/images/labs/lab2/design/lab2-product-detail.png">lab2-product-detail.png</a>
+                    </div>
+                    <div class="card-body">
+                        <img src="/images/labs/lab2/design/lab2-product-detail.png" alt="" class="card-img">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane container fade" id="implementation">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h5>Implementation</h5>
+                        URL: <a href="/labs/lab2/implementation.html">lab-2.html</a>
+                    </div>
+                    <div class="card-body">
+                        <div include-html="/labs/lab2/implementation.html"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
