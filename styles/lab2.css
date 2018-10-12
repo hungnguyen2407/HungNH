@@ -8,8 +8,7 @@
 
 .star {
     position: relative;
-    background-image: url('../images/labs/lab2/implementation/common.png');
-    background-position: -97px -83px;
+    background: url('../images/labs/lab2/implementation/common.png') -97px -83px;
     width: 112px;
     height: 20px;
 }
@@ -19,11 +18,111 @@
     left: 0;
     top: 0;
     width: 0;
-    background-image: url('../images/labs/lab2/implementation/common.png');
-    background-position: 0 -109px;
-    width: 112px;
+    background: url('../images/labs/lab2/implementation/common.png') 0 -109px;
     height: 20px;
     -webkit-transition: all .2s 0s ease;
     -moz-transition: all .2s 0s ease;
     transition: all .2s 0s ease;
+}
+
+.color-img {
+    height: 30px;
+    cursor: pointer;
+}
+
+.size {
+    min-width: 30px;
+    height: 30px;
+    padding: 3px;
+    background: #fff;
+    border: 1px solid #ddd;
+    float: left;
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.size-active {
+    background-color: black;
+    color: white;
+}
+
+.size-tips {
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin-left: 87px;
+    margin-top: -10px;
+    font-size: 12px;
+    color: #333;
+    width: auto;
+    padding: 0 8px;
+    min-height: 28px;
+    line-height: 28px;
+    background: #fff;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.qty-btn {
+    border: 1px solid #ddd;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.qty-input {
+    height: 30px;
+    line-height: 30px;
+    width: 62px;
+    float: left;
+    border: 1px solid #ddd;
+    border-left: 0;
+    border-right: 0;
+    text-align: center;
+}
+
+.bag-btn {
+    width: 300px;
+    float: left;
+    height: 70px;
+    background-color: black;
+    color: #fff;
+}
+
+.buyer-protection {
+    background: url('../images/labs/lab2/implementation/common.png') 0 -251px;
+    width: 20px;
+    height: 24px;
+    vertical-align: -8px;
+    display: inline-block;
+}
+
+.make-money {
+    background: url('../images/labs/lab2/implementation/common.png') -157px -219px;
+    width: 24px;
+    height: 24px;
+    vertical-align: -6px;
+    display: inline-block;
+}
+
+.get-it-free {
+    background: url('../images/labs/lab2/implementation/common.png') -181px -219px;
+    width: 22px;
+    height: 22px;
+    vertical-align: -4px;
+    display: inline-block;
+}
+
+.link {
+    color: black;
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: black;
 }
