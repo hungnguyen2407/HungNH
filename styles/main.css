@@ -48,3 +48,28 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.breadcrumb-item a {
+    color: black !important;
+    text-decoration: underline;
+}
+
+.navbar-item {
+    padding: 8px;
+}
+
+.navbar-item:hover {
+    background-color: black;
+}
+
+.navbar-item:hover a {
+    color: white !important;
+}
+
+.navbar-item-active {
+    background-color: black !important;
+}
+
+.navbar-item-active a {
+    color: white !important;
+}
