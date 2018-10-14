@@ -62,14 +62,24 @@
     background-color: black;
 }
 
-.navbar-item:hover a {
+.navbar-item:hover .nav-link {
     color: white !important;
 }
 
 .navbar-item-active {
     background-color: black !important;
+    color: white !important;
 }
 
 .navbar-item-active a {
     color: white !important;
+}
+
+.dropdown-item {
+    color: black;
+}
+
+.dropdown-item:hover {
+    background: black;
+    color: white;
 }

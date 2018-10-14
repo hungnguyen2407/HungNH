@@ -28,11 +28,16 @@
             <li class="nav-item navbar-item ">
                 <a class="nav-link" href="/index.html">Home</a>
             </li>
-            <li class="nav-item navbar-item">
-                <a class="nav-link" href="/labs/lab1/index.html">Lab 1</a>
-            </li>
-            <li class="nav-item navbar-item navbar-item-active">
-                <a class="nav-link" href="/labs/lab2/index.html">Lab 2</a>
+            <li class="nav-item navbar-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Labs
+                </a>
+                <div class="dropdown-menu shadow-sm" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/labs/lab1/index.html">Lab 1</a>
+                    <a class="dropdown-item navbar-item-active" href="/labs/lab2/index.html">Lab 2</a>
+                    <a class="dropdown-item" href="/labs/lab3/index.html">Lab 2</a>
+                </div>
             </li>
             <li class="nav-item navbar-item">
                 <a class="nav-link" href="/cv.html">Curriculum Vitae</a>
@@ -281,5 +286,22 @@
         </div>
     </div>
 </div>
+<!-- Footer -->
+<div include-html="/footer.html"></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="js/include.js" crossorigin="anonymous"></script>
+<script src="js/main.js" crossorigin="anonymous"></script>
+<script>
+    includeHTML();
+</script>
 </body>
 </html>
