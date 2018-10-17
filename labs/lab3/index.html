@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/main.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles/main.css" crossorigin="anonymous">
 </head>
 <body>
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white p-0 pl-2 pr-2">
-    <a class="navbar-brand" href="/index.html">Hung NH</a>
+    <a class="navbar-brand" href="../../index.html">Hung NH</a>
     <button class="navbar-toggler mt-2 mb-2" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav p-0">
             <li class="nav-item navbar-item">
-                <a class="nav-link" href="/index.html">Home</a>
+                <a class="nav-link" href="../../index.html">Home</a>
             </li>
             <li class="nav-item navbar-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -33,13 +33,13 @@
                     Labs
                 </a>
                 <div class="dropdown-menu shadow-sm" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/labs/lab1/index.html">Lab 1</a>
-                    <a class="dropdown-item" href="/labs/lab2/index.html">Lab 2</a>
-                    <a class="dropdown-item navbar-item-active" href="/labs/lab3/index.html">Lab 3</a>
+                    <a class="dropdown-item" href="../../labs/lab1/index.html">Lab 1</a>
+                    <a class="dropdown-item" href="../../labs/lab2/index.html">Lab 2</a>
+                    <a class="dropdown-item navbar-item-active" href="../../labs/lab3/index.html">Lab 3</a>
                 </div>
             </li>
             <li class="nav-item navbar-item">
-                <a class="nav-link" href="/cv.html">Curriculum Vitae</a>
+                <a class="nav-link" href="../../resume.html">Resume</a>
             </li>
         </ul>
     </div>
@@ -47,17 +47,106 @@
 <div class="conatiner-flud p-3">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent">
-            <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Lab 3</li>
         </ol>
     </nav>
+    <ul class="nav nav-pills mb-3 row" id="pills-tab" role="tablist">
+        <span class="col"></span>
+        <li class="nav-item col-sm-2 text-center">
+            <a class="nav-link hovershadow active" id="pills-ex1-tab" data-toggle="pill" href="#pills-ex1" role="tab"
+               aria-controls="pills-home" aria-selected="true">Exercise 1</a>
+        </li>
+        <li class="nav-item col-sm-2 text-center">
+            <a class="nav-link hovershadow" id="pills-ex2-tab" data-toggle="pill" href="#pills-ex2" role="tab"
+               aria-controls="pills-profile" aria-selected="false">Exercise 2</a>
+        </li>
+        <span class="col"></span>
+    </ul>
     <div class="container">
-        <div include-html="/wip.html"></div>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-ex1" role="tabpanel" aria-labelledby="pills-ex1-tab">
+                <nav>
+                    <div class="nav nav-tabs mb-3" id="nav-ex1-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-ex1-design-tab" data-toggle="tab"
+                           href="#nav-ex1-design" role="tab" aria-controls="nav-ex1-design"
+                           aria-selected="true">Design</a>
+                        <a class="nav-item nav-link" id="nav-ex1-implementation-tab" data-toggle="tab"
+                           href="#nav-ex1-implementation" role="tab" aria-controls="nav-ex1-implementation"
+                           aria-selected="false">Implementation</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-ex1-tabContent">
+                    <div class="tab-pane fade show active" id="nav-ex1-design" role="tabpanel"
+                         aria-labelledby="nav-ex1-design-tab">
+                        <div class="card shadow-sm">
+                            <div class="card-header">
+                                <h3 class="title">Design</h3>
+                                <a href="../../downloads/14130047-hungnh-lab3-ex1-design.zip">Download</a>
+                            </div>
+                            <div class="card-body">
+                                <img src="../../images/labs/lab3/design/ex1.jpg" alt="IMG" class="card-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-ex1-implementation" role="tabpanel"
+                         aria-labelledby="nav-ex1-implementation-tab">
+                        <div class="card shadow-sm">
+                            <div class="card-header">
+                                <h3 class="title">Implementation</h3>
+                                <a href="#">Download</a>
+                            </div>
+                            <div class="card-body">
+                                Click <a href="exercise1.html" class="card-link">here</a> to go to the implementation.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-ex2" role="tabpanel" aria-labelledby="pills-ex2-tab">
+                <nav>
+                    <div class="nav nav-tabs mb-3" id="nav-ex2-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-ex2-design-tab" data-toggle="tab"
+                           href="#nav-ex2-design" role="tab" aria-controls="nav-ex2-design"
+                           aria-selected="true">Design</a>
+                        <a class="nav-item nav-link" id="nav-ex2-implementation-tab" data-toggle="tab"
+                           href="#nav-ex2-implementation" role="tab" aria-controls="nav-ex2-implementation"
+                           aria-selected="false">Implementation</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-ex2-tabContent">
+                    <div class="tab-pane fade show active" id="nav-ex2-design" role="tabpanel"
+                         aria-labelledby="nav-ex2-design-tab">
+                        <div class="card shadow-sm">
+                            <div class="card-header">
+                                <h3 class="title">Design</h3>
+                                <a href="../../downloads/14130047-hungnh-lab3-ex2-design.zip">Download</a>
+                            </div>
+                            <div class="card-body">
+                                <img src="../../images/labs/lab3/design/ex2.jpg" alt="IMG" class="card-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-ex2-implementation" role="tabpanel"
+                         aria-labelledby="nav-ex2-implementation-tab">
+                        <div class="card shadow-sm">
+                            <div class="card-header">
+                                <h3 class="title">Implementation</h3>
+                                <a href="exercise2.html">Download</a>
+                            </div>
+                            <div class="card-body">
+                                Click <a href="exercise2.html" class="card-link">here</a> to go to the implementation.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- Footer -->
-<div include-html="/footer.html"></div>
+<div include-html="../../footer.html"></div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -68,8 +157,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-<script src="/js/include.js" crossorigin="anonymous"></script>
-<script src="/js/main.js" crossorigin="anonymous"></script>
+<script src="../../js/include.js" crossorigin="anonymous"></script>
+<script src="../../js/main.js" crossorigin="anonymous"></script>
 <script>
     includeHTML();
 </script>
