@@ -96,8 +96,8 @@
 <!-- Footer -->
 <div include-html="../../footer.html"></div>
 <!-- Footer -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -105,10 +105,75 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
 <script src="../../js/include.js"></script>
 <script src="../../js/main.js"></script>
 <script>
     includeHTML();
+</script>
+<script>
+    function format(data) {
+        return '<ul class="list-group">' +
+            '<li class="list-group-item"><p class="card-text">Phone: ' + data.phone + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Email: ' + data.mail + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Gender: ' + data.gender + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Address: ' + data.address + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Birth Place: ' + data.birthPlace + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Birth Date: ' + data.birthDate + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Age: ' + data.age + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Start Date: ' + data.startDate + '</p></li>' +
+            '</ul>';
+    }
+
+    $(document).ready(function () {
+        var table = $('#lab1-table').DataTable({
+            "ajax": "data.txt",
+            "columns": [
+                {
+                    "className": 'details-control',
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": '<i class="fas text-primary fa-plus-circle"></i>'
+                },
+                {"data": "id"},
+                {"data": "name"},
+                {"data": "position"},
+                {"data": "salary"},
+                {
+                    "data": "null",
+                    "defaultContent": '<a class="btn" data-toggle="modal" data-target="#editUser" title="Edit user"><i' +
+                        '                            class="fas fa-user-edit text-secondary"></i></a>' +
+                        '<a class="btn" data-toggle="modal" data-target="#deleteUser" title="Delete user"><i' +
+                        '                            class="fas fa-user-minus text-danger"></i></a>'
+                }
+            ],
+            "order": [[1, 'asc']],
+            responsive: true
+        });
+
+        // Add event listener for opening and closing details
+        $('#lab1-table tbody').on('click', 'td.details-control', function () {
+            var tr = $(this).closest('tr');
+            var row = table.row(tr);
+
+            if (row.child.isShown()) {
+                // This row is already open - close it
+                row.child.hide();
+                // FontAwesome 5
+                tr.find('i.fas').first().removeClass('fa-minus-circle text-danger');
+                tr.find('i.fas').first().addClass('fa-plus-circle text-primary');
+            }
+            else {
+                // Open this row
+                row.child(format(row.data())).show();
+                // FontAwesome 5
+                tr.find('i.fas').first().removeClass('fa-plus-circle text-primary');
+                tr.find('i.fas').first().addClass('fa-minus-circle text-danger');
+            }
+        });
+    });
 </script>
 </body>
 </html>
