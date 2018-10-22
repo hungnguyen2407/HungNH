@@ -37,7 +37,7 @@
     <h2 class="title text-center">Lab 1: Employee Management</h2>
     <div class="table-responsive">
         <!-- Button trigger modal -->
-        <button class="btn btn-primary" data-toggle="modal" data-target="#createEmployeeModel">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#createEmployeeModel" title="Add new user">
             <i class="fas fa-user-plus"></i>
         </button>
         <br>
@@ -76,9 +76,9 @@
                 <td>20/12/2016</td>
                 <td>$1200,00</td>
                 <td>
-                    <a class="btn" data-toggle="modal" data-target="#editUser" data-id="0"><i
+                    <a class="btn" data-toggle="modal" data-target="#editUser" data-id="0" title="Edit user"><i
                             class="fas fa-user-edit text-secondary"></i></a>
-                    <a class="btn" data-toggle="modal" data-target="#deleteUser"><i
+                    <a class="btn" data-toggle="modal" data-target="#deleteUser" title="Delete user"><i
                             class="fas fa-user-minus text-danger"></i></a>
                 </td>
             </tr>
@@ -96,9 +96,9 @@
                 <td>12/04/2017</td>
                 <td>$400,00</td>
                 <td>
-                    <a class="btn" data-toggle="modal" data-target="#editUser" data-id="1"><i
+                    <a class="btn" data-toggle="modal" data-target="#editUser" data-id="1" title="Edit user"><i
                             class="fas fa-user-edit text-secondary"></i></a>
-                    <a class="btn" data-toggle="modal" data-target="#deleteUser"><i
+                    <a class="btn" data-toggle="modal" data-target="#deleteUser" title="Delete user"><i
                             class="fas fa-user-minus text-danger"></i></a>
                 </td>
             </tr>
@@ -107,18 +107,24 @@
                 <td>Ho Hoang Hai</td>
                 <td>0922334455</td>
                 <td>haihh@ad.company.com</td>
-                <td>male</td>
-                <td>Administrator</td>
-                <td>HCM city</td>
-                <td>HCM city</td>
-                <td>16/02/1987</td>
-                <td>31</td>
-                <td>22/08/2010</td>
-                <td>$2000,00</td>
+
                 <td>
-                    <a class="btn" data-toggle="modal" data-target="#editUser" data-id="2"><i
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                            ea proident.
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+                       aria-expanded="false" aria-controls="collapseExample">
+                        Link with href
+                    </a>
+                    <a class="btn" data-toggle="modal" data-target="#editUser" data-id="2" title="Edit user"><i
                             class="fas fa-user-edit text-secondary"></i></a>
-                    <a class="btn" data-toggle="modal" data-target="#deleteUser"><i
+                    <a class="btn" data-toggle="modal" data-target="#deleteUser" title="Delete user"><i
                             class="fas fa-user-minus text-danger"></i></a>
                 </td>
             </tr>
