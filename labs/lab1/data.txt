@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "Doan Duong Quoc",
+      "phone": "0922334455",
+      "mail": "duongdq@dv.compary.com",
+      "gender": "male",
+      "position": "Developer",
+      "address": "140, Le Trong Tan, Q.15, D.Tan Phu, Ho Chi Minh, Vietnam",
+      "birthPlace": "106 Mai Hac Đe, Ha Huy Tap, Vinh, Nghe An, Vietnam",
+      "birthDate": "12/11/1993",
+      "age": "25",
+      "startDate": "27/06/2015",
+      "salary": "$1200,00"
+    },
+    {
+      "id": "2",
+      "name": "Tran Thi Ngoc Le",
+      "phone": "0934634291",
+      "mail": "lettn@mk.compary.com",
+      "gender": "female",
+      "position": "Marketing",
+      "address": "232 Number 1, Binh Tri Đong B, D.Binh Tan, Ho Chi Minh, Vietnam",
+      "birthPlace": "70 Hung Vuong, Tran Phu, Quang Ngai, Vietnam",
+      "birthDate": "15/08/1994",
+      "age": "24",
+      "startDate": "02/07/2016",
+      "salary": "$500,00"
+    },
+    {
+      "id": "3",
+      "name": "Ho Hoang Hai",
+      "phone": "0921950452",
+      "mail": "haihh@ad.compary.com",
+      "gender": "male",
+      "position": "Administrator",
+      "address": "584 Lac Long Quan, Q.5, D.11, Ho Chi Minh, Vietnam",
+      "birthPlace": "103 Vo Huu, Phu Thuy, Phan Thiet, Binh Thuan, Vietnam",
+      "birthDate": "10/12/1986",
+      "age": "32",
+      "startDate": "22/1/2008",
+      "salary": "$2000,00"
+    }
+  ]
+}
