@@ -52,8 +52,101 @@
             <li class="breadcrumb-item active" aria-current="page">Lab 4</li>
         </ol>
     </nav>
+    <div class="container">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#requirement">Requirement</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#design">Design</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#implementation">Implementation</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Tab panes -->
+    <div class="tab-content mt-4">
+        <div class="tab-pane container active" id="requirement">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h5>Requirement</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                    <ul>
+                        <li>
+                            Tạo một trang Web có nội dung bất kỳ, sử dụng linh hoạt tất cả
+                            những phần sau: Input Controls, Navigation, Animations, Default
+                            Settings, Guided Actions.
+                        </li>
+                        <li>
+                            Có biểu mẫu liên hệ.
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane container fade" id="design">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h5>Design</h5>
+                </div>
+                <div class="card-body">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                    Hand drawing
+                                </button>
+                            </div>
 
-    <div include-html="../../wip.html"></div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+                                    <img src="design/lab4-hd.jpeg" alt="" class="card-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header d-inline" id="headingTwo">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                    Adobe XD
+                                </button>
+                                <a class="btn btn-link float-right"
+                                   href="https://github.com/hungnguyen2407/HungNH/raw/master/downloads/14130047-hungnh-lab4-design.xd"><i
+                                        class="fas fa-download"></i> Download</a>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+                                    <img src="design/lab4-xd.png" alt="" class="card-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane container-fluid fade" id="implementation">
+            <div class="container">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h5>Implementation</h5>
+                        <a class="card-link" href="../../downloads/14130047-hungnh-lab4-implementation.zip">
+                            <i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+            </div>
+            <div include-html="implementation.html" class="mt-5 mb-5"></div>
+        </div>
+    </div>
+</div>
 </div>
 
 <!-- Footer -->
@@ -70,8 +163,55 @@
         crossorigin="anonymous"></script>
 <script src="../../js/include.js" crossorigin="anonymous"></script>
 <script src="../../js/main.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     includeHTML();
+</script>
+<script>
+    $(document).ready(function () {
+        if ($('#username').is(':focus')) {
+            $('#username-guide').show();
+        } else {
+            $('#username-guide').hide();
+        }
+    });
+
+    function search() {
+        $('#search-field').animate({width: '200px'});
+        $('#search-field').show().focus();
+        $('#search-field').focusout(function () {
+            $('#search-field').hide();
+            $('#search-field').width(0);
+        });
+    }
+
+    function showUserNameGuide() {
+        $('#username-guide').show();
+        $('#username').focusout(function () {
+            $('#username-guide').hide();
+        });
+    }
+
+    function showPasswordGuide() {
+        $('#password-guide').show();
+        $('#password').focusout(function () {
+            $('#password-guide').hide();
+        });
+    }
+
+    function showConfirmPasswordGuide() {
+        $('#confirm-password-guide').show();
+        $('#confirm-password').focusout(function () {
+            $('#confirm-password-guide').hide();
+        });
+    }
+
+    function showEmailGuide() {
+        $('#email-guide').show();
+        $('#email').focusout(function () {
+            $('#email-guide').hide();
+        });
+    }
 </script>
 </body>
 </html>

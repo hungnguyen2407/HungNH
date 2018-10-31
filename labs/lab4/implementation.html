@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4 - Implementation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon"
+          href="https://res.cloudinary.com/dtdk9ua19/image/upload/v1537435757/human-computer-interaction/common/logo.png"
+          type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <style>
+        .navbar1-item {
+            padding: 8px;
+        }
+
+        .navbar1-item:hover {
+            background-color: #4896e5;
+        }
+
+        .navbar1-item:hover .nav-link {
+            color: white !important;
+            display: block;
+        !important;
+        }
+
+        .navbar1-item-active a {
+            color: white !important;
+        }
+
+        .m-dd-l:after,
+        .m-dd-l:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 40px;
+            width: 0;
+            height: 0;
+            top: -18px;
+            border-style: solid;
+        }
+
+        .m-dd-l:after {
+            border-color: transparent transparent white transparent;
+            border-width: 10px;
+            border-top-width: 12px;
+        }
+
+        .m-dd-l:before {
+            border-color: transparent transparent rgba(0, 0, 0, .15) transparent;
+            border-width: 10px;
+        }
+
+        .m-dd-l li:hover {
+            background-color: #50a7ff;
+            color: white;
+        }
+
+        .search {
+            display: block;
+            padding: 7px 10px;
+            border: 1px solid #cacaca;
+            border-radius: 25px;
+            outline: 0;
+        }
+
+        .search input {
+            height: 20px;
+        }
+
+        .guide:after,
+        .guide:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -20px;
+            width: 0;
+            height: 0;
+            top: 10px;
+            border-style: solid;
+        }
+
+        .guide:after {
+            border-color: transparent white transparent transparent;
+            border-width: 10px;
+            border-right-width: 9px;
+            border-left-width: 12px;
+        }
+
+        .guide:before {
+            border-color: transparent rgba(0, 0, 0, 0.15) transparent transparent;
+            border-width: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-white p-0 pl-2 pr-2">
+    <a class="navbar-brand" href="#"><img src="images/icon.png" width="30" height="30" class="d-inline-block align-top"
+                                          alt=""> E-Learning</a>
+    <button class="navbar-toggler mt-2 mb-2" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav p-0 mr-auto ">
+            <li class="nav-item navbar1-item">
+                <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item navbar1-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Categories
+                </a>
+                <div class="dropdown-menu shadow-sm p-0 m-0" aria-labelledby="navbarDropdown">
+                    <ul class="list-group m-dd-l">
+                        <li class="list-group-item border-0">Development</li>
+                        <li class="list-group-item border-0">Business</li>
+                        <li class="list-group-item border-0">IT & Software</li>
+                        <li class="list-group-item border-0">Office Productivity</li>
+                        <li class="list-group-item border-0">Design</li>
+                        <li class="list-group-item border-0">Marketing</li>
+                        <li class="list-group-item border-0">Lifestyle</li>
+                        <li class="list-group-item border-0">Photography</li>
+                        <li class="list-group-item border-0">Health & Fitness</li>
+                        <li class="list-group-item border-0">Teacher Training</li>
+                        <li class="list-group-item border-0">Music</li>
+                        <li class="list-group-item border-0">Language</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item navbar1-item">
+                <a class="nav-link" href="#"><i class="fas fa-dollar-sign"></i> Pricing</a>
+            </li>
+            <li class="nav-item navbar1-item">
+                <a class="nav-link" href="#"><i class="fas fa-info"></i> About</a>
+            </li>
+            <li class="nav-item navbar1-item">
+                <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Contact us</a>
+            </li>
+        </ul>
+        <div class="form-inline">
+            <div class="search">
+                <input id="search-field" class="form-control mr-sm-2 border-0 p-0 m-0"
+                       style="display: none; width: 0px;" type="search" title="Search">
+                <button class="btn btn-search bg-transparent fas fa-search text-primary p-0"
+                        onclick="search()"></button>
+            </div>
+        </div>
+        <div class="form-inline">
+            <a href="#" class="nav-link text-dark">Sign in</a>
+            <a href="#" class="btn btn-primary">Sign up</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="margin-top: 10%">
+    <h2 class="title text-center">
+        Sign Up
+    </h2>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-sm-4 form-group">
+            <form action="">
+                <div class="mt-2 mb-2">
+                    <label for="username">User name:</label>
+                    <input id="username" type="text" class="form-control" onfocus="showUserNameGuide()" autofocus>
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" class="form-control" onfocus="showPasswordGuide()">
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="confirm-password">Confirm password:</label>
+                    <input id="confirm-password" type="password" class="form-control"
+                           onfocus="showConfirmPasswordGuide()">
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" class="form-control" onfocus="showEmailGuide()">
+                </div>
+                <div class="mt-2 mb-2">
+                    <label for="country">Country:</label>
+                    <select name="country" id="country" class="form-control">
+                        <option value="vn" selected>Vietnam</option>
+                        <option value="us">Singapore</option>
+                        <option value="us">Thailand</option>
+                        <option value="us">China</option>
+                        <option value="us">Japan</option>
+                        <option value="us">United States</option>
+                    </select>
+                </div>
+                <div class="mt-4 mb-2">
+                    <button class="form-control btn btn-primary">Sign up</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <div class="guide card shadow-sm" id="username-guide" style="display: none; margin-top: 38px;">
+                <div class="card-body">Username should be unique. At least contain 4 characters excepts space and
+                    special characters.
+                </div>
+            </div>
+            <div class="guide card shadow-sm" id="password-guide" style="display: none; margin-top: 116px;">
+                <div class="card-body">Password should at least 6 character and contains character, number, special
+                    character.
+                </div>
+            </div>
+            <div class="guide card shadow-sm" id="confirm-password-guide" style="display: none; margin-top: 195px;">
+                <div class="card-body">Re-type the password. It much be the same as the password.</div>
+            </div>
+            <div class="guide card shadow-sm" id="email-guide" style="display: none; margin-top: 273px;">
+                <div class="card-body">Email must contains '@' and the email address domain. <br>Ex: email@mail.com
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        if ($('#username').is(':focus')) {
+            $('#username-guide').show();
+        } else {
+            $('#username-guide').hide();
+        }
+    });
+
+    function search() {
+        $('#search-field').animate({width: '200px'});
+        $('#search-field').show().focus();
+        $('#search-field').focusout(function () {
+            $('#search-field').hide();
+            $('#search-field').width(0);
+        });
+    }
+
+    function showUserNameGuide() {
+        $('#username-guide').show();
+        $('#username').focusout(function () {
+            $('#username-guide').hide();
+        });
+    }
+
+    function showPasswordGuide() {
+        $('#password-guide').show();
+        $('#password').focusout(function () {
+            $('#password-guide').hide();
+        });
+    }
+
+    function showConfirmPasswordGuide() {
+        $('#confirm-password-guide').show();
+        $('#confirm-password').focusout(function () {
+            $('#confirm-password-guide').hide();
+        });
+    }
+
+    function showEmailGuide() {
+        $('#email-guide').show();
+        $('#email').focusout(function () {
+            $('#email-guide').hide();
+        });
+    }
+</script>
+</body>
+</html>
