@@ -539,69 +539,69 @@
         }
     });
 </script>
-<script>
-    $('#editUser').on('show.bs.modal', function (event) {
-        var table = $('#lab1-table').DataTable();
-        var button = $(event.relatedTarget); // Button that triggered the modal
-        var id = button.data('id'); // Extract info from data-* attributes
-// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-        var modal = $(this);
-        var name = table.cell(id, 1).data();
-        var phone = table.cell(id, 2).data();
-        var mail = table.cell(id, 3).data();
-        var gender = table.cell(id, 4).data();
-        var position = table.cell(id, 5).data();
-        var address = table.cell(id, 6).data();
-        var birthPlace = table.cell(id, 7).data();
-        var birthDate = table.cell(id, 8).data();
-        var age = table.cell(id, 9).data();
-        var startDate = table.cell(id, 10).data();
-        var salary = table.cell(id, 11).data();
-        modal.find('#name-edit').val(name);
-        modal.find('#phone-edit').val(phone);
-        modal.find('#email-edit').val(mail);
-        modal.find('#gender-edit').val(gender);
-        modal.find('#name-edit').val(name);
+<!--<script>-->
+<!--$('#editUser').on('show.bs.modal', function (event) {-->
+<!--var table = $('#lab1-table').DataTable();-->
+<!--var button = $(event.relatedTarget); // Button that triggered the modal-->
+<!--var id = button.data('id'); // Extract info from data-* attributes-->
+<!--// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).-->
+<!--// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.-->
+<!--var modal = $(this);-->
+<!--var name = table.cell(id, 1).data();-->
+<!--var phone = table.cell(id, 2).data();-->
+<!--var mail = table.cell(id, 3).data();-->
+<!--var gender = table.cell(id, 4).data();-->
+<!--var position = table.cell(id, 5).data();-->
+<!--var address = table.cell(id, 6).data();-->
+<!--var birthPlace = table.cell(id, 7).data();-->
+<!--var birthDate = table.cell(id, 8).data();-->
+<!--var age = table.cell(id, 9).data();-->
+<!--var startDate = table.cell(id, 10).data();-->
+<!--var salary = table.cell(id, 11).data();-->
+<!--modal.find('#name-edit').val(name);-->
+<!--modal.find('#phone-edit').val(phone);-->
+<!--modal.find('#email-edit').val(mail);-->
+<!--modal.find('#gender-edit').val(gender);-->
+<!--modal.find('#name-edit').val(name);-->
 
-        modal.find('#adm-edit').prop("checked", false);
-        modal.find('#dv-edit').prop("checked", false);
-        modal.find('#pm-edit').prop("checked", false);
-        modal.find('#ta-edit').prop("checked", false);
-        modal.find('#qa-edit').prop("checked", false);
-        modal.find('#mk-edit').prop("checked", false);
+<!--modal.find('#adm-edit').prop("checked", false);-->
+<!--modal.find('#dv-edit').prop("checked", false);-->
+<!--modal.find('#pm-edit').prop("checked", false);-->
+<!--modal.find('#ta-edit').prop("checked", false);-->
+<!--modal.find('#qa-edit').prop("checked", false);-->
+<!--modal.find('#mk-edit').prop("checked", false);-->
 
-        position.split(" ").forEach(function (pos) {
-            switch (pos) {
-                case "Administrator":
-                    modal.find('#adm-edit').prop("checked", true);
-                    break;
-                case "Developer":
-                    modal.find('#dv-edit').prop("checked", true);
-                    break;
-                case "Project Manager":
-                    modal.find('#pm-edit').prop("checked", true);
-                    break;
-                case "Technical Assistant":
-                    modal.find('#ta-edit').prop("checked", true);
-                    break;
-                case "Quality Assurance":
-                    modal.find('#qa-edit').prop("checked", true);
-                    break;
-                case "Marketing":
-                    modal.find('#mk-edit').prop("checked", true);
-                    break;
-            }
-        });
-        modal.find('#address-edit').val(address);
-        modal.find('#birthPlace-edit').val(birthPlace);
-        modal.find('#birthDate-edit').val(birthDate);
-        modal.find('#age-edit').val(age);
-        modal.find('#startDate-edit').val(startDate);
-        modal.find('#salary-edit').val(salary);
-    })
+<!--position.split(" ").forEach(function (pos) {-->
+<!--switch (pos) {-->
+<!--case "Administrator":-->
+<!--modal.find('#adm-edit').prop("checked", true);-->
+<!--break;-->
+<!--case "Developer":-->
+<!--modal.find('#dv-edit').prop("checked", true);-->
+<!--break;-->
+<!--case "Project Manager":-->
+<!--modal.find('#pm-edit').prop("checked", true);-->
+<!--break;-->
+<!--case "Technical Assistant":-->
+<!--modal.find('#ta-edit').prop("checked", true);-->
+<!--break;-->
+<!--case "Quality Assurance":-->
+<!--modal.find('#qa-edit').prop("checked", true);-->
+<!--break;-->
+<!--case "Marketing":-->
+<!--modal.find('#mk-edit').prop("checked", true);-->
+<!--break;-->
+<!--}-->
+<!--});-->
+<!--modal.find('#address-edit').val(address);-->
+<!--modal.find('#birthPlace-edit').val(birthPlace);-->
+<!--modal.find('#birthDate-edit').val(birthDate);-->
+<!--modal.find('#age-edit').val(age);-->
+<!--modal.find('#startDate-edit').val(startDate);-->
+<!--modal.find('#salary-edit').val(salary);-->
+<!--})-->
 
-</script>
+<!--</script>-->
 <script>
     // Every time a modal is shown, if it has an autofocus element, focus on it.
     $('.modal').on('shown.bs.modal', function () {
