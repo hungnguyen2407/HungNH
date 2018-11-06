@@ -313,223 +313,223 @@
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
-<!--<script>-->
-<!--function format(data) {-->
-<!--return '<ul class="list-group">' +-->
-<!--'<li class="list-group-item"><p class="card-text">Phone: ' + data.phone + '</p></li>' +-->
-<!--'<li class="list-group-item"><p class="card-text">Email: ' + data.mail + '</p></li>' +-->
-<!--'<li class="list-group-item"><p class="card-text">Gender: ' + data.gender + '</p></li>' +-->
-<!--'<li class="list-group-item"><p class="card-text">Address: ' + data.address + '</p></li>' +-->
-<!--'<li class="list-group-item"><p class="card-text">Birth Place: ' + data.birthPlace + '</p></li>' +-->
-<!--'<li class="list-group-item"><p class="card-text">Birth Date: ' + data.birthDate + '</p></li>' +-->
-<!--'<li class="list-group-item"><p class="card-text">Age: ' + data.age + '</p></li>' +-->
-<!--'<li class="list-group-item"><p class="card-text">Start Date: ' + data.startDate + '</p></li>' +-->
-<!--'</ul>';-->
-<!--}-->
+<script>
+    function format(data) {
+        return '<ul class="list-group">' +
+            '<li class="list-group-item"><p class="card-text">Phone: ' + data.phone + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Email: ' + data.mail + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Gender: ' + data.gender + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Address: ' + data.address + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Birth Place: ' + data.birthPlace + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Birth Date: ' + data.birthDate + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Age: ' + data.age + '</p></li>' +
+            '<li class="list-group-item"><p class="card-text">Start Date: ' + data.startDate + '</p></li>' +
+            '</ul>';
+    }
 
-<!--$(document).ready(function () {-->
-<!--var table = $('#lab1-table').DataTable({-->
-<!--"ajax": "https://res.cloudinary.com/dtdk9ua19/raw/upload/v1541488846/hungnh/data.txt",-->
-<!--"columns": [-->
-<!--{-->
-<!--"className": 'details-control',-->
-<!--"orderable": false,-->
-<!--"data": null,-->
-<!--"defaultContent": '<i class="fas text-primary fa-plus-circle"></i>'-->
-<!--},-->
-<!--{"data": "id"},-->
-<!--{"data": "name"},-->
-<!--{"data": "position"},-->
-<!--{"data": "salary"},-->
-<!--{-->
-<!--"data": "null",-->
-<!--"defaultContent": '<a class="btn" data-toggle="modal" data-target="#editUser" title="Edit user"><i' +-->
-<!--'                            class="fas fa-user-edit text-secondary"></i></a>' +-->
-<!--'<a class="btn" data-toggle="modal" data-target="#deleteUser" title="Delete user"><i' +-->
-<!--'                            class="fas fa-user-minus text-danger"></i></a>'-->
-<!--}-->
-<!--],-->
-<!--"order": [[1, 'asc']],-->
-<!--responsive: true-->
-<!--});-->
+    $(document).ready(function () {
+        var table = $('#lab1-table').DataTable({
+            "ajax": "https://res.cloudinary.com/dtdk9ua19/raw/upload/v1541488846/hungnh/lab1/data.txt",
+            "columns": [
+                {
+                    "className": 'details-control',
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": '<i class="fas text-primary fa-plus-circle"></i>'
+                },
+                {"data": "id"},
+                {"data": "name"},
+                {"data": "position"},
+                {"data": "salary"},
+                {
+                    "data": "null",
+                    "defaultContent": '<a class="btn" data-toggle="modal" data-target="#editUser" title="Edit user"><i' +
+                        '                            class="fas fa-user-edit text-secondary"></i></a>' +
+                        '<a class="btn" data-toggle="modal" data-target="#deleteUser" title="Delete user"><i' +
+                        '                            class="fas fa-user-minus text-danger"></i></a>'
+                }
+            ],
+            "order": [[1, 'asc']],
+            responsive: true
+        });
 
-<!--// Add event listener for opening and closing details-->
-<!--$('#lab1-table tbody').on('click', 'td.details-control', function () {-->
-<!--var tr = $(this).closest('tr');-->
-<!--var row = table.row(tr);-->
+// Add event listener for opening and closing details
+        $('#lab1-table tbody').on('click', 'td.details-control', function () {
+            var tr = $(this).closest('tr');
+            var row = table.row(tr);
 
-<!--if (row.child.isShown()) {-->
-<!--// This row is already open - close it-->
-<!--row.child.hide();-->
-<!--// FontAwesome 5-->
-<!--tr.find('i.fas').first().removeClass('fa-minus-circle text-danger');-->
-<!--tr.find('i.fas').first().addClass('fa-plus-circle text-primary');-->
-<!--}-->
-<!--else {-->
-<!--// Open this row-->
-<!--row.child(format(row.data())).show();-->
-<!--// FontAwesome 5-->
-<!--tr.find('i.fas').first().removeClass('fa-plus-circle text-primary');-->
-<!--tr.find('i.fas').first().addClass('fa-minus-circle text-danger');-->
-<!--}-->
-<!--});-->
-<!--});-->
-<!--</script>-->
-<!--<script>-->
-<!--// This example adds a search box to a map, using the Google Place Autocomplete-->
-<!--// feature. People can enter geographical searches. The search box will return a-->
-<!--// pick list containing a mix of places and predicted search terms.-->
+            if (row.child.isShown()) {
+// This row is already open - close it
+                row.child.hide();
+// FontAwesome 5
+                tr.find('i.fas').first().removeClass('fa-minus-circle text-danger');
+                tr.find('i.fas').first().addClass('fa-plus-circle text-primary');
+            }
+            else {
+// Open this row
+                row.child(format(row.data())).show();
+// FontAwesome 5
+                tr.find('i.fas').first().removeClass('fa-plus-circle text-primary');
+                tr.find('i.fas').first().addClass('fa-minus-circle text-danger');
+            }
+        });
+    });
+</script>
+<script>
+    // This example adds a search box to a map, using the Google Place Autocomplete
+    // feature. People can enter geographical searches. The search box will return a
+    // pick list containing a mix of places and predicted search terms.
 
-<!--// This example requires the Places library. Include the libraries=places-->
-<!--// parameter when you first load the API. For example:-->
-<!--// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">-->
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-<!--function initAutocomplete() {-->
-<!--var map = new google.maps.Map(document.getElementById('map'), {-->
-<!--center: {lat: -33.8688, lng: 151.2195},-->
-<!--zoom: 13,-->
-<!--mapTypeId: 'roadmap'-->
-<!--});-->
+    function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -33.8688, lng: 151.2195},
+            zoom: 13,
+            mapTypeId: 'roadmap'
+        });
 
-<!--// Create the search box and link it to the UI element.-->
-<!--var input = document.getElementById('address');-->
-<!--var searchBox = new google.maps.places.SearchBox(input);-->
-<!--map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);-->
+// Create the search box and link it to the UI element.
+        var input = document.getElementById('address');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-<!--// Bias the SearchBox results towards current map's viewport.-->
-<!--map.addListener('bounds_changed', function () {-->
-<!--searchBox.setBounds(map.getBounds());-->
-<!--});-->
+// Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function () {
+            searchBox.setBounds(map.getBounds());
+        });
 
-<!--var markers = [];-->
-<!--// Listen for the event fired when the user selects a prediction and retrieve-->
-<!--// more details for that place.-->
-<!--searchBox.addListener('places_changed', function () {-->
-<!--var places = searchBox.getPlaces();-->
+        var markers = [];
+// Listen for the event fired when the user selects a prediction and retrieve
+// more details for that place.
+        searchBox.addListener('places_changed', function () {
+            var places = searchBox.getPlaces();
 
-<!--if (places.length == 0) {-->
-<!--return;-->
-<!--}-->
+            if (places.length == 0) {
+                return;
+            }
 
-<!--// Clear out the old markers.-->
-<!--markers.forEach(function (marker) {-->
-<!--marker.setMap(null);-->
-<!--});-->
-<!--markers = [];-->
+// Clear out the old markers.
+            markers.forEach(function (marker) {
+                marker.setMap(null);
+            });
+            markers = [];
 
-<!--// For each place, get the icon, name and location.-->
-<!--var bounds = new google.maps.LatLngBounds();-->
-<!--places.forEach(function (place) {-->
-<!--if (!place.geometry) {-->
-<!--console.log("Returned place contains no geometry");-->
-<!--return;-->
-<!--}-->
-<!--var icon = {-->
-<!--url: place.icon,-->
-<!--size: new google.maps.Size(71, 71),-->
-<!--origin: new google.maps.Point(0, 0),-->
-<!--anchor: new google.maps.Point(17, 34),-->
-<!--scaledSize: new google.maps.Size(25, 25)-->
-<!--};-->
+// For each place, get the icon, name and location.
+            var bounds = new google.maps.LatLngBounds();
+            places.forEach(function (place) {
+                if (!place.geometry) {
+                    console.log("Returned place contains no geometry");
+                    return;
+                }
+                var icon = {
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(25, 25)
+                };
 
-<!--// Create a marker for each place.-->
-<!--markers.push(new google.maps.Marker({-->
-<!--map: map,-->
-<!--icon: icon,-->
-<!--title: place.name,-->
-<!--position: place.geometry.location-->
-<!--}));-->
+// Create a marker for each place.
+                markers.push(new google.maps.Marker({
+                    map: map,
+                    icon: icon,
+                    title: place.name,
+                    position: place.geometry.location
+                }));
 
-<!--if (place.geometry.viewport) {-->
-<!--// Only geocodes have viewport.-->
-<!--bounds.union(place.geometry.viewport);-->
-<!--} else {-->
-<!--bounds.extend(place.geometry.location);-->
-<!--}-->
-<!--});-->
-<!--map.fitBounds(bounds);-->
-<!--});-->
-<!--initAutocomplete2();-->
-<!--}-->
-<!--</script>-->
-<!--<script>-->
-<!--// This example adds a search box to a map, using the Google Place Autocomplete-->
-<!--// feature. People can enter geographical searches. The search box will return a-->
-<!--// pick list containing a mix of places and predicted search terms.-->
+                if (place.geometry.viewport) {
+// Only geocodes have viewport.
+                    bounds.union(place.geometry.viewport);
+                } else {
+                    bounds.extend(place.geometry.location);
+                }
+            });
+            map.fitBounds(bounds);
+        });
+        initAutocomplete2();
+    }
+</script>
+<script>
+    // This example adds a search box to a map, using the Google Place Autocomplete
+    // feature. People can enter geographical searches. The search box will return a
+    // pick list containing a mix of places and predicted search terms.
 
-<!--// This example requires the Places library. Include the libraries=places-->
-<!--// parameter when you first load the API. For example:-->
-<!--// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">-->
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-<!--function initAutocomplete2() {-->
-<!--var map = new google.maps.Map(document.getElementById('map2'), {-->
-<!--center: {lat: -33.8688, lng: 151.2195},-->
-<!--zoom: 13,-->
-<!--mapTypeId: 'roadmap'-->
-<!--});-->
+    function initAutocomplete2() {
+        var map = new google.maps.Map(document.getElementById('map2'), {
+            center: {lat: -33.8688, lng: 151.2195},
+            zoom: 13,
+            mapTypeId: 'roadmap'
+        });
 
-<!--// Create the search box and link it to the UI element.-->
-<!--var input = document.getElementById('birthPlace');-->
-<!--var searchBox = new google.maps.places.SearchBox(input);-->
-<!--map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);-->
+// Create the search box and link it to the UI element.
+        var input = document.getElementById('birthPlace');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-<!--// Bias the SearchBox results towards current map's viewport.-->
-<!--map.addListener('bounds_changed', function () {-->
-<!--searchBox.setBounds(map.getBounds());-->
-<!--});-->
+// Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function () {
+            searchBox.setBounds(map.getBounds());
+        });
 
-<!--var markers = [];-->
-<!--// Listen for the event fired when the user selects a prediction and retrieve-->
-<!--// more details for that place.-->
-<!--searchBox.addListener('places_changed', function () {-->
-<!--var places = searchBox.getPlaces();-->
+        var markers = [];
+// Listen for the event fired when the user selects a prediction and retrieve
+// more details for that place.
+        searchBox.addListener('places_changed', function () {
+            var places = searchBox.getPlaces();
 
-<!--if (places.length === 0) {-->
-<!--return;-->
-<!--}-->
+            if (places.length === 0) {
+                return;
+            }
 
-<!--// Clear out the old markers.-->
-<!--markers.forEach(function (marker) {-->
-<!--marker.setMap(null);-->
-<!--});-->
-<!--markers = [];-->
+// Clear out the old markers.
+            markers.forEach(function (marker) {
+                marker.setMap(null);
+            });
+            markers = [];
 
-<!--// For each place, get the icon, name and location.-->
-<!--var bounds = new google.maps.LatLngBounds();-->
-<!--places.forEach(function (place) {-->
-<!--if (!place.geometry) {-->
-<!--console.log("Returned place contains no geometry");-->
-<!--return;-->
-<!--}-->
-<!--var icon = {-->
-<!--url: place.icon,-->
-<!--size: new google.maps.Size(71, 71),-->
-<!--origin: new google.maps.Point(0, 0),-->
-<!--anchor: new google.maps.Point(17, 34),-->
-<!--scaledSize: new google.maps.Size(25, 25)-->
-<!--};-->
+// For each place, get the icon, name and location.
+            var bounds = new google.maps.LatLngBounds();
+            places.forEach(function (place) {
+                if (!place.geometry) {
+                    console.log("Returned place contains no geometry");
+                    return;
+                }
+                var icon = {
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(25, 25)
+                };
 
-<!--// Create a marker for each place.-->
-<!--markers.push(new google.maps.Marker({-->
-<!--map: map,-->
-<!--icon: icon,-->
-<!--title: place.name,-->
-<!--position: place.geometry.location-->
-<!--}));-->
+// Create a marker for each place.
+                markers.push(new google.maps.Marker({
+                    map: map,
+                    icon: icon,
+                    title: place.name,
+                    position: place.geometry.location
+                }));
 
-<!--if (place.geometry.viewport) {-->
-<!--// Only geocodes have viewport.-->
-<!--bounds.union(place.geometry.viewport);-->
-<!--} else {-->
-<!--bounds.extend(place.geometry.location);-->
-<!--}-->
-<!--});-->
-<!--map.fitBounds(bounds);-->
-<!--});-->
-<!--}-->
-<!--</script>-->
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHeD_9f0DYpIok1glRr6fTcvm_FHuBQWg&libraries=places&callback=initAutocomplete"-->
-<!--async defer></script>-->
+                if (place.geometry.viewport) {
+// Only geocodes have viewport.
+                    bounds.union(place.geometry.viewport);
+                } else {
+                    bounds.extend(place.geometry.location);
+                }
+            });
+            map.fitBounds(bounds);
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHeD_9f0DYpIok1glRr6fTcvm_FHuBQWg&libraries=places&callback=initAutocomplete"
+        async defer></script>
 <script>
     $('.inputs').keydown(function (e) {
         if (e.which === 13) {
@@ -539,69 +539,69 @@
         }
     });
 </script>
-<!--<script>-->
-<!--$('#editUser').on('show.bs.modal', function (event) {-->
-<!--var table = $('#lab1-table').DataTable();-->
-<!--var button = $(event.relatedTarget); // Button that triggered the modal-->
-<!--var id = button.data('id'); // Extract info from data-* attributes-->
-<!--// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).-->
-<!--// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.-->
-<!--var modal = $(this);-->
-<!--var name = table.cell(id, 1).data();-->
-<!--var phone = table.cell(id, 2).data();-->
-<!--var mail = table.cell(id, 3).data();-->
-<!--var gender = table.cell(id, 4).data();-->
-<!--var position = table.cell(id, 5).data();-->
-<!--var address = table.cell(id, 6).data();-->
-<!--var birthPlace = table.cell(id, 7).data();-->
-<!--var birthDate = table.cell(id, 8).data();-->
-<!--var age = table.cell(id, 9).data();-->
-<!--var startDate = table.cell(id, 10).data();-->
-<!--var salary = table.cell(id, 11).data();-->
-<!--modal.find('#name-edit').val(name);-->
-<!--modal.find('#phone-edit').val(phone);-->
-<!--modal.find('#email-edit').val(mail);-->
-<!--modal.find('#gender-edit').val(gender);-->
-<!--modal.find('#name-edit').val(name);-->
+<script>
+    $('#editUser').on('show.bs.modal', function (event) {
+        var table = $('#lab1-table').DataTable();
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var id = button.data('id'); // Extract info from data-* attributes
+// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this);
+        var name = table.cell(id, 1).data();
+        var phone = table.cell(id, 2).data();
+        var mail = table.cell(id, 3).data();
+        var gender = table.cell(id, 4).data();
+        var position = table.cell(id, 5).data();
+        var address = table.cell(id, 6).data();
+        var birthPlace = table.cell(id, 7).data();
+        var birthDate = table.cell(id, 8).data();
+        var age = table.cell(id, 9).data();
+        var startDate = table.cell(id, 10).data();
+        var salary = table.cell(id, 11).data();
+        modal.find('#name-edit').val(name);
+        modal.find('#phone-edit').val(phone);
+        modal.find('#email-edit').val(mail);
+        modal.find('#gender-edit').val(gender);
+        modal.find('#name-edit').val(name);
 
-<!--modal.find('#adm-edit').prop("checked", false);-->
-<!--modal.find('#dv-edit').prop("checked", false);-->
-<!--modal.find('#pm-edit').prop("checked", false);-->
-<!--modal.find('#ta-edit').prop("checked", false);-->
-<!--modal.find('#qa-edit').prop("checked", false);-->
-<!--modal.find('#mk-edit').prop("checked", false);-->
+        modal.find('#adm-edit').prop("checked", false);
+        modal.find('#dv-edit').prop("checked", false);
+        modal.find('#pm-edit').prop("checked", false);
+        modal.find('#ta-edit').prop("checked", false);
+        modal.find('#qa-edit').prop("checked", false);
+        modal.find('#mk-edit').prop("checked", false);
 
-<!--position.split(" ").forEach(function (pos) {-->
-<!--switch (pos) {-->
-<!--case "Administrator":-->
-<!--modal.find('#adm-edit').prop("checked", true);-->
-<!--break;-->
-<!--case "Developer":-->
-<!--modal.find('#dv-edit').prop("checked", true);-->
-<!--break;-->
-<!--case "Project Manager":-->
-<!--modal.find('#pm-edit').prop("checked", true);-->
-<!--break;-->
-<!--case "Technical Assistant":-->
-<!--modal.find('#ta-edit').prop("checked", true);-->
-<!--break;-->
-<!--case "Quality Assurance":-->
-<!--modal.find('#qa-edit').prop("checked", true);-->
-<!--break;-->
-<!--case "Marketing":-->
-<!--modal.find('#mk-edit').prop("checked", true);-->
-<!--break;-->
-<!--}-->
-<!--});-->
-<!--modal.find('#address-edit').val(address);-->
-<!--modal.find('#birthPlace-edit').val(birthPlace);-->
-<!--modal.find('#birthDate-edit').val(birthDate);-->
-<!--modal.find('#age-edit').val(age);-->
-<!--modal.find('#startDate-edit').val(startDate);-->
-<!--modal.find('#salary-edit').val(salary);-->
-<!--})-->
+        position.split(" ").forEach(function (pos) {
+            switch (pos) {
+                case "Administrator":
+                    modal.find('#adm-edit').prop("checked", true);
+                    break;
+                case "Developer":
+                    modal.find('#dv-edit').prop("checked", true);
+                    break;
+                case "Project Manager":
+                    modal.find('#pm-edit').prop("checked", true);
+                    break;
+                case "Technical Assistant":
+                    modal.find('#ta-edit').prop("checked", true);
+                    break;
+                case "Quality Assurance":
+                    modal.find('#qa-edit').prop("checked", true);
+                    break;
+                case "Marketing":
+                    modal.find('#mk-edit').prop("checked", true);
+                    break;
+            }
+        });
+        modal.find('#address-edit').val(address);
+        modal.find('#birthPlace-edit').val(birthPlace);
+        modal.find('#birthDate-edit').val(birthDate);
+        modal.find('#age-edit').val(age);
+        modal.find('#startDate-edit').val(startDate);
+        modal.find('#salary-edit').val(salary);
+    })
 
-<!--</script>-->
+</script>
 <script>
     // Every time a modal is shown, if it has an autofocus element, focus on it.
     $('.modal').on('shown.bs.modal', function () {

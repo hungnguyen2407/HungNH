@@ -127,73 +127,72 @@
         crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
 <script src="../../js/include.js"></script>
 <script src="../../js/main.js"></script>
 <script>
     includeHTML();
 </script>
-<script>
-    function format(data) {
-        return '<ul class="list-group">' +
-            '<li class="list-group-item"><p class="card-text">Phone: ' + data.phone + '</p></li>' +
-            '<li class="list-group-item"><p class="card-text">Email: ' + data.mail + '</p></li>' +
-            '<li class="list-group-item"><p class="card-text">Gender: ' + data.gender + '</p></li>' +
-            '<li class="list-group-item"><p class="card-text">Address: ' + data.address + '</p></li>' +
-            '<li class="list-group-item"><p class="card-text">Birth Place: ' + data.birthPlace + '</p></li>' +
-            '<li class="list-group-item"><p class="card-text">Birth Date: ' + data.birthDate + '</p></li>' +
-            '<li class="list-group-item"><p class="card-text">Age: ' + data.age + '</p></li>' +
-            '<li class="list-group-item"><p class="card-text">Start Date: ' + data.startDate + '</p></li>' +
-            '</ul>';
-    }
+<!--<script>-->
+<!--function format(data) {-->
+<!--return '<ul class="list-group">' +-->
+<!--'<li class="list-group-item"><p class="card-text">Phone: ' + data.phone + '</p></li>' +-->
+<!--'<li class="list-group-item"><p class="card-text">Email: ' + data.mail + '</p></li>' +-->
+<!--'<li class="list-group-item"><p class="card-text">Gender: ' + data.gender + '</p></li>' +-->
+<!--'<li class="list-group-item"><p class="card-text">Address: ' + data.address + '</p></li>' +-->
+<!--'<li class="list-group-item"><p class="card-text">Birth Place: ' + data.birthPlace + '</p></li>' +-->
+<!--'<li class="list-group-item"><p class="card-text">Birth Date: ' + data.birthDate + '</p></li>' +-->
+<!--'<li class="list-group-item"><p class="card-text">Age: ' + data.age + '</p></li>' +-->
+<!--'<li class="list-group-item"><p class="card-text">Start Date: ' + data.startDate + '</p></li>' +-->
+<!--'</ul>';-->
+<!--}-->
 
-    $(document).ready(function () {
-        var table = $('#lab1-table').DataTable({
-            "ajax": "https://res.cloudinary.com/dtdk9ua19/raw/upload/v1541488846/hungnh/lab1/data.txt",
-            "columns": [
-                {
-                    "className": 'details-control',
-                    "orderable": false,
-                    "data": null,
-                    "defaultContent": '<i class="fas text-primary fa-plus-circle"></i>'
-                },
-                {"data": "id"},
-                {"data": "name"},
-                {"data": "position"},
-                {"data": "salary"},
-                {
-                    "data": "null",
-                    "defaultContent": '<a class="btn" data-toggle="modal" data-target="#editUser" title="Edit user"><i' +
-                        '                            class="fas fa-user-edit text-secondary"></i></a>' +
-                        '<a class="btn" data-toggle="modal" data-target="#deleteUser" title="Delete user"><i' +
-                        '                            class="fas fa-user-minus text-danger"></i></a>'
-                }
-            ],
-            "order": [[1, 'asc']],
-            responsive: true
-        });
+<!--$(document).ready(function () {-->
+<!--var table = $('#lab1-table').DataTable({-->
+<!--"ajax": "https://res.cloudinary.com/dtdk9ua19/raw/upload/v1541488846/hungnh/lab1/data.txt",-->
+<!--"columns": [-->
+<!--{-->
+<!--"className": 'details-control',-->
+<!--"orderable": false,-->
+<!--"data": null,-->
+<!--"defaultContent": '<i class="fas text-primary fa-plus-circle"></i>'-->
+<!--},-->
+<!--{"data": "id"},-->
+<!--{"data": "name"},-->
+<!--{"data": "position"},-->
+<!--{"data": "salary"},-->
+<!--{-->
+<!--"data": "null",-->
+<!--"defaultContent": '<a class="btn" data-toggle="modal" data-target="#editUser" title="Edit user"><i' +-->
+<!--'                            class="fas fa-user-edit text-secondary"></i></a>' +-->
+<!--'<a class="btn" data-toggle="modal" data-target="#deleteUser" title="Delete user"><i' +-->
+<!--'                            class="fas fa-user-minus text-danger"></i></a>'-->
+<!--}-->
+<!--],-->
+<!--"order": [[1, 'asc']],-->
+<!--responsive: true-->
+<!--});-->
 
-        // Add event listener for opening and closing details
-        $('#lab1-table tbody').on('click', 'td.details-control', function () {
-            var tr = $(this).closest('tr');
-            var row = table.row(tr);
+<!--// Add event listener for opening and closing details-->
+<!--$('#lab1-table tbody').on('click', 'td.details-control', function () {-->
+<!--var tr = $(this).closest('tr');-->
+<!--var row = table.row(tr);-->
 
-            if (row.child.isShown()) {
-                // This row is already open - close it
-                row.child.hide();
-                // FontAwesome 5
-                tr.find('i.fas').first().removeClass('fa-minus-circle text-danger');
-                tr.find('i.fas').first().addClass('fa-plus-circle text-primary');
-            }
-            else {
-                // Open this row
-                row.child(format(row.data())).show();
-                // FontAwesome 5
-                tr.find('i.fas').first().removeClass('fa-plus-circle text-primary');
-                tr.find('i.fas').first().addClass('fa-minus-circle text-danger');
-            }
-        });
-    });
-</script>
+<!--if (row.child.isShown()) {-->
+<!--// This row is already open - close it-->
+<!--row.child.hide();-->
+<!--// FontAwesome 5-->
+<!--tr.find('i.fas').first().removeClass('fa-minus-circle text-danger');-->
+<!--tr.find('i.fas').first().addClass('fa-plus-circle text-primary');-->
+<!--}-->
+<!--else {-->
+<!--// Open this row-->
+<!--row.child(format(row.data())).show();-->
+<!--// FontAwesome 5-->
+<!--tr.find('i.fas').first().removeClass('fa-plus-circle text-primary');-->
+<!--tr.find('i.fas').first().addClass('fa-minus-circle text-danger');-->
+<!--}-->
+<!--});-->
+<!--});-->
+<!--</script>-->
 </body>
 </html>
